@@ -10,9 +10,14 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+setopt hist_ignore_dups
+setopt share_history
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
+export PATH=$PATH:$HOME/.local/bin
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -32,3 +37,4 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 eval "$(starship init zsh)"
+eval "$(sheldon source)"
