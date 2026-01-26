@@ -1,0 +1,13 @@
+set number
+set cursorline
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
+set ignorecase
+set incsearch
+set smartcase
+set hlsearch
+set wrapscan
+set showmatch
