@@ -10,6 +10,11 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+zshaddhistory() {
+  local line="${1%%$'\n'}"
+  [[ ! "$line" =~ "^(eza|ls|cat|bat|)($| )" ]]
+}
+
 setopt hist_ignore_dups
 setopt share_history
 
@@ -18,6 +23,9 @@ autoload -Uz compinit
 compinit
 
 export PATH=$PATH:$HOME/.local/bin
+
+# command alias
+alias eza='echo "# alias settings eza -la --sort=time"; \eza -la --sort=time'
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
