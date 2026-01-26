@@ -10,6 +10,7 @@ require("window").setup(wezterm, config)
 require("mouse").setup(wezterm, config)
 require("font").setup(wezterm, config)
 require("tab").setup(wezterm, config)
+require("cursor").setup(wezterm, config)
 config.keys = require("keybinds").keys
 config.key_tables = require("keybinds").key_tables
 
