@@ -1,107 +1,91 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+ format = """
+ $directory\
+ [](fg:hyacinth_blue bg:navy_blue)\
+ $git_branch\
+ $git_status\
+ [](fg:navy_blue bg:black)\
+ $nodejs\
+ $rust\
+ $golang\
+ $php\
+ $java\
+ $scala\
+ [](fg:black)\
+ $status\
+ $line_break
+ $character"""
  
-format = """
-$directory\
-$git_branch\
-$git_status\
-$php\
-$nodejs\
-$docker_context\
-$status\
-$line_break
-$character"""
+ palette = 'blue_theme'
  
-palette = 'catppuccin_mocha'
+ [palettes.blue_theme]
+ day_dream = "#a3aed2"
+ hyacinth_blue = "#769ff0"
+ navy_blue = "#394260"
+ silver_white = "#e3e5e5"
+ 
+ lime = "#00ff00"
+ red = "#ff0000"
+ black = "#212736"
+ 
+ [line_break]
+ disabled = true
+ 
+ [directory]
+ style = "fg:silver_white bg:hyacinth_blue"
+ format = "[  $path ]($style)"
+ truncation_length = 5
+ truncate_to_repo = false
+ truncation_symbol = "…/"
+ read_only = "🔒"
+ 
+ [directory.substitutions]
+ "Documents" = "󰈙 "
+ "Downloads" = " "
+ "Music" = " "
+ "Pictures" = " "
+ 
+ [git_branch]
+ symbol = ""
+ style = "bg:navy_blue"
+ format = '[[ $symbol $branch ](fg:hyacinth_blue bg:navy_blue)]($style)'
+ 
+ [git_status]
+ style = "bg:navy_blue"
+ format = '[[($all_status$ahead_behind )](fg:hyacinth_blue bg:navy_blue)]($style)'
+ 
+ [nodejs]
+ symbol = ""
+ style = "bg:black"
+ format = '[[ $symbol ($version) ](fg:hyacinth_blue bg:black)]($style)'
+ 
+ [php]
+ symbol = ""
+ style = "bg:black"
+ format = '[[ $symbol ($version) ](fg:hyacinth_blue bg:black)]($style)'
+ 
+ [java]
+ symbol = "󰬷"
+ style = "bg:black"
+ format = '[[ $symbol ($version) ](fg:hyacinth_blue bg:black)]($style)'
+ 
+ [scala]
+ symbol = ""
+ style = "bg:black"
+ format = '[[ $symbol ($version) ](fg:hyacinth_blue bg:black)]($style)'
+ 
+ [docker_context]
+ symbol = ""
+ style = "bg:#black"
+ format = '[[ $symbol( $context) ](fg:hyacinth_blue bg:black)]($style)'
+ 
+ [status]
+ style = "fg:#a6e3a1"
+ format = '[$symbol]($style)'
+ disabled = false
+ success_symbol = "[ 😻]($style)"
+ symbol = "[ 😿 $status](bold fg:red)"
+ 
+ [character]
+ success_symbol = '[❯](bold fg:lime)'
+ error_symbol = '[❯](bold fg:red)'
 
-[directory]
-  style = "blue"
-  format = "[  $path |]($style)"
-  truncation_length = 5
-  truncate_to_repo = false
-  truncation_symbol = "…/"
-  read_only = "🔒"
-
-[directory.substitutions]
-  "Documents" = "󰈙 "
-  "Downloads" = " "
-  "Music" = "󰝚 "
-  "Pictures" = " "
- 
-[git_branch]
-  symbol = ""
-  style = "sapphire"
-  format = '[ $symbol $branch ]($style)'
- 
-[git_status]
-  style = "sapphire"
-  format = '[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind |]($style)'
-  conflicted = ''
-  untracked = ''
-  stashed = ''
-  modified = ''
-  staged = ''
-  renamed = ''
-  deleted = ''
-  ahead = ''
-  behind = ''
-  diverged = ''
-  up_to_date = '✓'
- 
-[status]
-  style = "fg:green"
-  format = '[$symbol]($style)'
-  disabled = false
-  success_symbol = "[ 😻]($style)"
-  symbol = "[ 😿](bold fg:red)"
- 
-[line_break]
-  disabled = true
- 
-palette = 'catppuccin_mocha'
-[palettes.catppuccin_mocha]
-  rosewater = "#f5e0dc"
-  flamingo = "#f2cdcd"
-  pink = "#f5c2e7"
-  mauve = "#cba6f7"
-  red = "#f38ba8"
-  maroon = "#eba0ac"
-  peach = "#fab387"
-  yellow = "#f9e2af"
-  green = "#a6e3a1"
-  teal = "#94e2d5"
-  sky = "#89dceb"
-  sapphire = "#74c7ec"
-  blue = "#89b4fa"
-  lavender = "#b4befe"
-  text = "#cdd6f4"
-  subtext1 = "#bac2de"
-  subtext0 = "#a6adc8"
-  overlay2 = "#9399b2"
-  overlay1 = "#7f849c"
-  overlay0 = "#6c7086"
-  surface2 = "#585b70"
-  surface1 = "#45475a"
-  surface0 = "#313244"
-  base = "#1e1e2e"
-  mantle = "#181825"
-  crust = "#11111b"
-
-[character]
-  success_symbol = '[❯](bold fg:sapphire)'
-  error_symbol = '[❯](bold fg:red)'
-
-[nodejs]
-  symbol = ""
-  style = "fg:teal"
-  format = '[ $symbol( $version) |]($style)'
- 
-[php]
-  symbol = ""
-  style = "fg:teal"
-  format = '[ $symbol( $version) |]($style)'
- 
-[docker_context]
-  symbol = ""
-  style = "bg:teal"
-  format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
- 
