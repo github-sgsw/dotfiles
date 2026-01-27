@@ -6,6 +6,8 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices.
 
+config.automatically_reload_config = true
+
 require("window").setup(wezterm, config)
 require("mouse").setup(wezterm, config)
 require("font").setup(wezterm, config)
