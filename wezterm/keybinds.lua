@@ -13,9 +13,13 @@ return {
     { key = 'w', mods = 'ALT', action = act.ActivatePaneDirection('Down') },
     
     -- ペインの水平分割
-    { key = '|', mods = 'LEADER|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+    { key = '|', mods = 'LEADER|SHIFT', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
     -- ペインの上下分割
-    { key = '-', mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
+    { key = '-', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+    
+    -- タブ移動
+    { key = 'RightArrow', mods = 'ALT', action = act.ActivateTabRelative(1) },
+    { key = 'LeftArrow', mods = 'ALT', action = act.ActivateTabRelative(-1) },
     
     -- コマンドパレット表示
     { key = 'p', mods = 'LEADER', action = act.ActivateCommandPalette }
