@@ -1,4 +1,7 @@
-theme = "darcula-solid"
+theme = "tokyonight_moon"
+
+[editor]
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -7,3 +10,9 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
