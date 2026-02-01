@@ -83,7 +83,7 @@
  format = '[$symbol]($style)'
  disabled = false
  success_symbol = "[ 😻]($style)"
- symbol = "[ 😿 $status](bold fg:red)"
+ symbol = "[ 😿](bold fg:red)"
  
  [character]
  success_symbol = '[❯](bold fg:lime)'
