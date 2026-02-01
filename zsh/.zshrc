@@ -3,8 +3,6 @@
 # autoload -Uz promptinit
 # promptinit # prompt adam1
 
-setopt histignorealldups sharehistory
-
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history: 
 HISTSIZE=1000
 SAVEHIST=1000
@@ -23,6 +21,7 @@ autoload -Uz compinit
 compinit
 
 export PATH=$PATH:$HOME/.local/bin
+export PATH="$PATH:/home/sugi/.local/share/coursier/bin"
 
 # command alias
 alias eza='echo "# alias settings eza -la --sort=time"; \eza -la --sort=time'
@@ -46,3 +45,4 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
+eval "$(mise activate zsh)"
