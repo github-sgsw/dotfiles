@@ -2,6 +2,16 @@ theme = "tokyonight_moon"
 
 [editor]
 color-modes = true
+default-yank-register = "+"
+end-of-line-diagnostics = "hint"
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-progress-messages = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -11,8 +21,9 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-[editor.statusline]
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+[editor.indent-guides]
+render = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
