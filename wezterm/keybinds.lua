@@ -11,6 +11,7 @@ return {
     { key = 'v', mods = 'ALT', action = act.ActivatePaneDirection('Right') },
     { key = 't', mods = 'ALT', action = act.ActivatePaneDirection('Up') },
     { key = 'w', mods = 'ALT', action = act.ActivatePaneDirection('Down') },
+    { key = 'd', mods = 'LEADER|CTRL', action = act.CloseCurrentPane { confirm = true } },
 
     -- ペインの水平分割
     { key = '|', mods = 'LEADER|SHIFT', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
@@ -20,6 +21,7 @@ return {
     -- タブ移動
     { key = 'RightArrow', mods = 'ALT', action = act.ActivateTabRelative(1) },
     { key = 'LeftArrow', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+    { key = 'w', mods = 'CTRL', action = act.CloseCurrentTab { confirm = true } },
 
     -- コマンドパレット表示
     { key = 'p', mods = 'LEADER', action = act.ActivateCommandPalette }
