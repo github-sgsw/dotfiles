@@ -6,8 +6,6 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices.
 
-config.automatically_reload_config = true
-
 config.leader = { key = 's', mods = 'CTRL', timeout_milliseconds = 2000 }
 
 require("window").setup(wezterm, config)
