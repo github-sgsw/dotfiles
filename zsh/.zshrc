@@ -1,48 +1,44 @@
-# Set up the prompt
-# To use starship, comment out the prompt initialization
-# autoload -Uz promptinit
-# promptinit # prompt adam1
+# PATHの重複を除去
+typeset -U path PATH
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history: 
+path=(
+  $HOME/.local/bin
+  $HOME/.local/share/mise/installs/coursier/latest/bin
+  $HOME/.ghcup/bin
+  $path
+)
+
+HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.zsh_history
 
+# historyに保存しない
 zshaddhistory() {
   local line="${1%%$'\n'}"
   [[ ! "$line" =~ "^(eza|ls|cat|bat|)($| )" ]]
 }
 
-setopt hist_ignore_dups
-setopt share_history
+setopt hist_ignore_dups      # 直前と同じコマンドは保存しない
+setopt hist_ignore_all_dups  # 古い重複コマンドを削除
+setopt hist_ignore_space     # 先頭にスペースがあるコマンドは保存しない
+setopt hist_reduce_blanks    # 余分な空白を削除
+setopt share_history         # ターミナル間で履歴をリアルタイム共有
 
-# Use modern completion system
+eval "$(mise activate zsh)"
+
+# compinitのキャッシュ化
 autoload -Uz compinit
-compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 
-export PATH=$PATH:$HOME/.local/bin
-export PATH="$PATH:/home/sugi/.local/share/coursier/bin"
-
-# command alias
-alias eza='echo "# alias settings eza -la --sort=time"; \eza -la --sort=time'
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+# ターミナルの背景色と被ってサジェストが見えないため、サジェストに背景色を付与する
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250,bg=238"
+eval "$(sheldon source)"
 
 eval "$(starship init zsh)"
-eval "$(sheldon source)"
-eval "$(mise activate zsh)"
+
+# alias
+alias eza='echo "# alias settings eza -la --sort=time"; \eza -la --sort=time'

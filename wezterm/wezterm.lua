@@ -16,7 +16,7 @@ require("cursor").setup(wezterm, config)
 config.keys = require("keybinds").keys
 --config.key_tables = require("keybinds").key_tables
 
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
 
 -- For example, changing the initial geometry for new windows:
 config.initial_cols = 120
