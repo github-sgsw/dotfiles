@@ -1,16 +1,21 @@
-# 開発環境
+# dotfilesまとめ
 ## editor
-Helix Editor
+[Helix Editor](https://docs.helix-editor.com/building-from-source.html)
 ## terminal
-wezterm
+[wezterm](https://wezterm.org/install/source.html)
 ## shelll
-zsh
+[zsh]
 ### plugin
-sheldon
+[sheldon]
 ## package manager
-mise
+[mise](https://mise.jdx.dev/getting-started.html)
 ## git client
-lazygit or intellij
+[lazygit](https://github.com/jesseduffield/lazygit#installation) or [intellij]
 
-各ツールの設定ファイル先にシンボリックリンク貼るスクリプト書く
+## Setup
+各ツールをインストールしたあと、setup.shの実行することで各ツールの設定ファイルへシンボリックリンクを貼るt
+
+```bash
+./setup.sh
+```
 
