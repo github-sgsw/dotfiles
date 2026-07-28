@@ -2,6 +2,7 @@
 
 inherits = "tokyonight"
 
+# customize
 # 背景透過
 "ui.background" = {}
 # 行番号のスタイル
@@ -12,7 +13,10 @@ inherits = "tokyonight"
 "ui.selection" = { bg = "blue" }
 # マルチカーソル時のメイン
 "ui.selection.primary" = { bg = "magenta", fg = "white" }
+# インデントガイド
+"ui.virtual.indent-guide" = { fg = "default" }
 
+# original  
 [palette]
 red = "#ff757f"
 orange = "#ff966c"
@@ -22,7 +26,7 @@ green = "#4fd6be"
 aqua = "#65bcff"
 teal = "#4fd6be"
 turquoise = "#89ddff"
-light-cyan = "#b4f9f8"
+light-cyan = "#b4f9f8"  
 cyan = "#86e1fc"
 blue = "#82aaff"
 purple = "#fca7ea"
