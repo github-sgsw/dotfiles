@@ -8,6 +8,10 @@ inherits = "tokyonight"
 "ui.linenr" = { fg = "white" }
 # 現在選択している行番号のスタイル
 "ui.linenr.selected" = { fg = "yellow", bg = "gray", modifiers = ["bold"] }
+# 範囲選択の範囲をわかりやすく
+"ui.selection" = { bg = "blue" }
+# マルチカーソル時のメイン
+"ui.selection.primary" = { bg = "magenta", fg = "white" }
 
 [palette]
 red = "#ff757f"
