@@ -83,8 +83,8 @@ hint = { fg = "hint" }
 "ui.menu" = { bg = "bg-menu", fg = "fg" }
 "ui.menu.selected" = { bg = "fg-selected" }
 "ui.popup" = { bg = "bg-menu", fg = "border-highlight" }
-"ui.selection" = { bg = "bg-selection" }
-"ui.selection.primary" = { bg = "bg-selection" }
+"ui.selection" = { bg = "bg-selection-bright" }
+"ui.selection.primary" = { bg = "#465385" }
 "ui.statusline" = { bg = "bg-menu", fg = "fg-dark" }
 "ui.statusline.inactive" = { bg = "bg-menu", fg = "fg-gutter" }
 "ui.statusline.normal" = { bg = "blue", fg = "bg", modifiers = ["bold"] }
@@ -137,5 +137,6 @@ border-highlight = "#27a1b9"
 bg = "#1a1b26"
 bg-inlay = "#1a2b32"
 bg-selection = "#283457"
+bg-selection-bright = "#3b4261"
 bg-menu = "#16161e"
 bg-focus = "#292e42"
