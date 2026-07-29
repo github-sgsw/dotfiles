@@ -3,7 +3,8 @@ local act = wezterm.action
 
 return {
   keys = {
-    -- 画面フルスクリーン切り替え。背景透過が連動しないからいらないかも、
+    -- 画面フルスクリーン切り替え。os (Ubuntu) 側の使用で背景透過が連動しない
+    -- super + ↑ Ubuntu側のショートカットで代用
     { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
 
     -- Pane操作
