@@ -4,6 +4,6 @@ formatter = {command = 'fourmolu', args = ["--stdin-input-file", "%{buffer_name}
 auto-format = true
 
 [[language]]
-name = "scala"
-formatter = {command = 'scalafmt', args = ["--stdin-input-file", "%{buffer_name}"]}
+name = "cabal"
+formatter = {command = 'cabal-gild', args = ["--stdin", "%{buffer_name}"]}
 auto-format = true

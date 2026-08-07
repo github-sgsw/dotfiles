@@ -40,5 +40,6 @@ eval "$(sheldon source)"
 
 eval "$(starship init zsh)"
 
-# alias
 alias eza='echo "# alias settings eza -la --sort=time"; \eza -la --sort=time'
+# historyのデフォルト表示を100件にする
+alias history='fc -l -100'
