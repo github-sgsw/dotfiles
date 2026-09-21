@@ -3,7 +3,7 @@ theme = "tokyonight"
 [editor]
 color-modes = true
 default-yank-register = "+"
-end-of-line-diagnostics = "hint"
+trim-trailing-whitespace = true
 
 [editor.statusline]
 mode.normal = "NORMAL"
@@ -27,6 +27,5 @@ focus-lost = true
 [editor.indent-guides]
 render = true
 
-[editor.inline-diagnostics]
-cursor-line = "warning"
-
+[editor.word-completion]
+trigger-length = 4
