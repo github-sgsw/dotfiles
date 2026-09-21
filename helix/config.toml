@@ -11,7 +11,8 @@ mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [editor.lsp]
-display-progress-messages = true
+auto-document-highlight = true
+display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"
