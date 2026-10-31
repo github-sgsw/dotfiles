@@ -2,7 +2,6 @@ theme = "tokyonight"
 
 [editor]
 color-modes = true
-default-yank-register = "+"
 trim-trailing-whitespace = true
 
 [editor.statusline]
