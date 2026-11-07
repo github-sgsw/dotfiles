@@ -7,3 +7,10 @@ auto-format = true
 name = "cabal"
 formatter = {command = 'cabal-gild', args = ["--stdin", "%{buffer_name}"]}
 auto-format = true
+
+[language-server.phpantom]
+command = "phpantom_lsp"
+
+[[language]]
+name = "php"
+language-servers = ["phpantom"]
